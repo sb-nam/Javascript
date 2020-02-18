@@ -79,3 +79,49 @@ document.write(name+ " 님은 " + result);
 </body>
 </html>
 ```
+
+## 짝수열 색 넣고 table 만들기
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+    border: 1px solid black;
+	border-collapse: collapse;
+}
+
+tr, td {
+    border: 1px solid black;
+}
+
+tr:nth-child(2n) {
+    background-color: yellow;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+var hang = prompt("행 입력", "0");
+var yull = prompt("열 입력", "0");
+
+document.write("<table>");
+for(var i=1; i<=hang; i++) {
+	
+	document.write("<tr>");
+	for(var j=1; j<=yull; j++) {
+		
+		document.write("<td>");
+		document.write(i+"행"+j+"열");
+		document.write("</td>");
+	}
+	
+	document.write("</tr>");
+}
+document.write("</table>");
+</script>
+</body>
+</html>
+```
