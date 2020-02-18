@@ -125,3 +125,41 @@ document.write("</table>");
 </body>
 </html>
 ```
+## table로 묶어서 항목 만들기
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	border-collapse: collapse;
+}
+tr,td,th {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>내용</th>
+			<th>비고</th>
+		</tr>
+		<script type="text/javascript">
+		var control = prompt("자료건수 입력", "0");
+
+		for (var i = 1; i <= control; i++) {
+			document.write("<tr>");
+			document.write("<td>" + i + "</td>");
+			document.write("<td>" + i + "번째 입력 내용" + "</td>");
+			document.write("<td></td>");
+			document.write("</tr>");
+		}
+	</script>
+	</table>
+</body>
+</html>
+```
