@@ -163,3 +163,40 @@ tr,td,th {
 </body>
 </html>
 ```
+
+## 내장 객체 생성하기
+** 참조 변수(인스턴스 이름) = new 생성 함수();
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var tv = new Object();                      // 1번 방식
+		tv.color = "white";
+		tv.price = "300000";
+		tv.info = function() {
+			document.write("tv 색상: " + this.color, "<br>");
+			document.write("tv 가격: " + this.price, "<br>");
+		}
+
+		var car = {                                //2번 
+			color : "black",
+			price : 5000000,
+			info : function() {
+				document.write("car 색상: " + this.color, "<br>");
+				document.write("car 색상: " + this.price, "<br>");
+			}
+		};
+		
+		document.write("<h1>tv 객체 메서드 호출</h1>");
+		tv.info();
+		document.write("<h1>car 객체 메서드 호출</h1>");
+		car.info();
+	</script>
+</body>
+</html>
+```
