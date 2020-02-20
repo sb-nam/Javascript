@@ -386,3 +386,59 @@ console.log(yellowArr);   // yellowArr 배열의 가장 앞 인덱스에 밀어 
 </body>
 </html>
 ```
+## 함수
+```
+기본형 - function name() {
+	자바스크립트 코드;
+}
+
+참조 변수 = function () {
+	자바스크립트 코드;
+}
+```
+## 함수 예제
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var addNum = 0;
+		var subNum = 1000;
+
+		var auto_1 = setInterval(function() {
+			addNum++;
+			console.log("addNum :" + addNum);
+		}, 3000);
+
+		var auto_2 = setInterval(function() {
+			subNum--;
+			console.log("subNum :" + subNum);
+		}, 3000);
+	</script>
+
+	<button onclick="clearInterval(auto_1)">증가 정지</button>
+	<button onclick="clearInterval(auto_2)">감소 정지</button>
+</body>
+</html>
+```
+
+## 함수 예제2
+```
+var count = 0;
+myFnc();
+function myFnc() {
+    count++;
+    document.write("hello" + count, "<br>");
+}
+
+myFnc();
+var theFnc = function() {
+	count++;
+	document.write("bye" + count, "<br>");
+}
+theFnc();
+```
