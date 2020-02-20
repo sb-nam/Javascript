@@ -5,13 +5,6 @@
 var 변수명; 또는 var 변수명 = 값;
 데이터 타입: 문자형 String, 숫자형 Number, 논리형 Boolean, Null & Undefined 가 있다.
 
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
 <body>
 	<script type="text/javascript" src="../JSP/b.js">
 		var t1 = "학교종이"
@@ -24,7 +17,6 @@ var 변수명; 또는 var 변수명 = 값;
 		document.write(result);
 	</script>
 </body>
-</html>
 
 var a = true;
 var b = false;
@@ -59,12 +51,7 @@ b === 10; //false
 ## 3항 연산자
 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 <script type="text/javascript">
 var name = prompt("당신의 이름은?", "");
@@ -77,7 +64,7 @@ result = result ? "적정 체중 입니다.":"적정 체중이 아닙니다.";
 document.write(name+ " 님은 " + result);
 </script>
 </body>
-</html>
+
 ```
 
 ## 짝수열 색 넣고 table 만들기
@@ -167,12 +154,7 @@ tr,td,th {
 ## 내장 객체 생성하기
 ** 참조 변수(인스턴스 이름) = new 생성 함수();
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 	<script type="text/javascript">
 		var tv = new Object();                      // 1번 방식
@@ -203,12 +185,7 @@ tr,td,th {
 ## 날짜
 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 	<script type="text/javascript">
 		var today = new Date();
@@ -236,12 +213,7 @@ tr,td,th {
 
 ## 현재 부터 지정 날짜 남은 일수 구하기
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 	<script type="text/javascript">
 		var today = new Date();
@@ -259,12 +231,7 @@ tr,td,th {
 ## 배열
 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 <script type="text/javascript">
 var arr = [30, "따르릉", true];
@@ -291,12 +258,7 @@ for(i in arr) {
 ## 배열2
 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 <script type="text/javascript">
 var arr_1 = ["사당","교대","방배","강남"];
@@ -324,12 +286,7 @@ console.log(arr_2);
 ## 배열3
 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 <script type="text/javascript">
 var greenArr = ["교대","방배","강남"];
@@ -352,12 +309,7 @@ console.log(yellowArr);   // yellowArr 배열의 가장 앞 인덱스에 밀어 
 ```
 ## 배열을 이용한 알고리즘
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 	<script type="text/javascript">
 		var userEmail = prompt("당신의 이메일 주소는?", "");
@@ -398,12 +350,7 @@ console.log(yellowArr);   // yellowArr 배열의 가장 앞 인덱스에 밀어 
 ```
 ## 함수 예제
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
 <body>
 	<script type="text/javascript">
 		var addNum = 0;
@@ -441,4 +388,208 @@ var theFnc = function() {
 	document.write("bye" + count, "<br>");
 }
 theFnc();
+
+function myFnc(name,area) {
+	document.write("안녕하세요. " + name +" 입니다.","<br>");
+	document.write("사는 곳은 " + area + " 입니다.","<br><br>");
+}
+
+myFnc("홍당무","서울");
+myFnc("닭찌찌","수원");
 ```
+## 함수 이용하여 버튼클릭시 배경색 바꾸기
+```
+var color = [ "white", "yellow", "aqua", "purple" ];
+
+	var i = 0;
+	function changeColor() {
+		i++;
+		if (i >= color.length) {
+			i = 0;
+		}
+
+	var bodyTag = document.getElementById("theBody");
+	bodyTag.style.backgroundColor = color[i];
+	}
+	// document.getElementById("theBody").style.backgroundColor = color[i]; 이렇게도 대체 가능!
+</script>
+
+</head>
+<body id="theBody">
+<button onclick="changeColor()">배경색 바꾸기</button>
+```
+
+## 함수 이용하여 로그인 로직 짜보기
+```
+var rightId ="korea";
+var rightPw ="1234";
+
+function login(id,pw) {
+	if(id == rightId) {
+		if(pw == rightPw) {
+			document.write(id + " 님 방문을 환영 합니다." );
+		} else {
+			document.write(" 잘못된 비밀번호 입니다. " );
+		}
+	} else {
+		document.write("존재하지 않는 아이디 입니다." );
+	}
+} 
+
+var userId = prompt("아이디를 입력하세요." , "");
+var userPw = prompt("비밀번호를 입력하세요." , "");
+
+login(userId,userPw);
+```
+## 매개변수 없이 함수에 전달된 값 가져오기
+```
+function sum() {
+	var sum = arguments[0]+arguments[1]+arguments[2];
+	document.write("sum");
+}
+sum(10,20,30);
+```
+
+## 데이터를 반환하고 강제 종료하는 return 문
+```
+function 함수명() {
+	스크립트 코드1;    //2
+	return 데이터(값);  //3
+}
+var 변수 = 함수명();   //1  함수 호출
+```
+
+## 함수 return 예제
+```
+function testAvg(arrData) {
+	var sum=0;
+	for(var i=0; i<arrData.length; i++) {
+		sum += Number(prompt(arrData[i] + " 점수는?","0"));
+	}
+	
+	var avg = sum / arrData.length;
+	return avg;
+}
+
+var arrSubject = ["국어","수학"];
+var result = testAvg(arrSubject);
+
+document.write("평균 점수는 " + result + " 입니다.");
+```
+
+## 함수 이용하여 사진 갤러리 만들기
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var num = 1;
+	function gallery(direct) {
+		if (direct) {
+			if (num == 8) {
+				return;
+			}
+			num++;
+		} else {
+			if (num == 1) {
+				return;
+			}
+			num--;
+		}
+
+		var imgTag = document.getElementById("photo");
+		imgTag.setAttribute("src", "../images/pic_" + num + ".jpg");
+	}
+</script>
+</head>
+<body>
+	<div id="galleryZone">
+		<p>
+			<img alt="" src="../images/pic_1.jpg" id="photo">
+		</p>
+		<p>
+			<button onclick="gallery(0)">이전</button>
+			<button onclick="gallery(1)">다음</button>
+		</p>
+	</div>
+</body>
+</html>
+```
+## 재귀함수
+```
+		var num = 0;
+		function testFnc() {
+			num++;
+			document.write(num, "<br>");
+			if (num == 10) {
+				return;
+			}
+			testFnc();
+		}
+
+		testFnc();
+```
+
+## 객체 생성자 함수
+```
+function 함수명(매개변수1,매개변수2,....매개변수n) { //객체 생성자 함수
+    this.속성명 = 새 값;
+    this.함수명 = function() {
+    	자바스크립트 코드;
+    }
+}
+
+var 참조 변수(인스턴스 네임) = new 함수명();
+
+var 참조 변수 = {
+		속성 : 새 값, 함수명 : function () {     // 객체 생성
+			
+		}
+}
+```
+
+## 객체 생성자 함수 예제
+```
+
+	<script type="text/javascript">
+		function CheckWeight(name, height, weight) {
+			this.userName = name;
+			this.userHeight = height;
+			this.userWeight = weight;
+			this.minWeight;
+			this.maxWeight;
+
+			this.getInfo = function() {
+				var str = "";
+				str += "이름: " + this.userName + ", ";
+				str += "키: " + this.userHeight + ", ";
+				str += "몸무게: " + this.userWeight + "<br>";
+				return str;
+			}
+
+			this.getResult = function() {
+				this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+				this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+				if (this.userWeight >= this.minWeight
+						&& this.userWeight <= this.maxWeight) {
+					return "정상 몸무게 입니다.";
+				} else if (this.userWeight < this.minWeight) {
+					return "정상 몸무게 보다 미달 입니다.";
+				} else {
+					return "정상 몸무게 보다 초과 입니다.";
+				}
+			}
+		}
+
+		var jang = new CheckWeight("장보리", 168, 62);
+		var park = new CheckWeight("박달재", 176, 75);
+	
+		console.log(jang);
+		console.log(park);
+		
+		document.write(jang.getInfo());
+		document.write(jang.getResult());
+```		
