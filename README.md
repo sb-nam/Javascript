@@ -592,4 +592,151 @@ var 참조 변수 = {
 		
 		document.write(jang.getInfo());
 		document.write(jang.getResult());
-```		
+```
+
+## 문서를 동적으로 만드는 방법
+```
+<body>
+	<ul>
+		<li>first</li>
+		<li>second</li>
+		<li>third</li>
+	</ul>
+	<button onclick="setColor()">click</button>
+	<script type="text/javascript">
+		function setColor() {
+			var li = document.querySelectorAll("li");
+			for (var i = 0; i < li.length; i++) {
+				li[i].style.color = "green";
+				li[i].style.backgroundColor = "orange";
+			}
+		}
+	</script>
+</body>
+```
+
+## style 객체와 속성
+```
+<style type="text/css">
+div {
+	width: 600px;
+	height: 400px;
+	border: 1px solid;
+}
+</style>
+</head>
+<body>
+	<div id="box">색상 바꾸기</div>
+	<button onClick="setColor()">click</button>
+	<script>
+		function setColor() {
+			var box = document.getElementById("box");
+			box.style.color="white";
+			box.style.backgroundColor="orange";
+		}
+	</script>
+</body>
+```
+
+## 속성 조작
+```
+<style type="text/css">
+#box {
+	width: 100px;
+	height: 100px;
+	border: 3px solid black;
+}
+.box {
+    background: orange;
+}
+</style>
+</head>
+<body>
+	<div id="box" onClick="changeColor()">HelloBox</div>
+	<button onClick="changeColor()">click</button>
+	<script>
+		function changeColor() {
+			var box = document.getElementById("box");
+			box.setAttribute("class","box"); // class="box"; 랑 같다.
+			
+		}
+	</script>
+</body>
+```
+
+## 인라인 이벤트
+
+```
+<body>
+<a href="http://www.google.com" onclick="alert('구글로 이동')">구글</a>
+</body>
+```
+
+## 이벤트 핸들러
+
+```
+<body>
+	<button id="btn">click</button>
+	<script>
+		var btn=document.getElementById("btn");
+		btn.onclick=function() {
+			alert("event 1");
+		}
+		btn.onclick=function() {
+			alert("event 2");   // 이벤트 핸들러는 내용 변경이기 때문에 event 2만 동작한다.
+		}
+	</script>
+</body>
+
+```
+
+## 이벤트 리스너
+
+```
+<body>
+	<button id="btn">click</button>
+	<script>
+		var btn=document.getElementById("btn");
+		btn.addEventListener("click",function() {
+			alert("event 1");
+		});
+		btn.addEventListener("click",function() {     // 이벤트 리스너는 두 이벤트가 순차적으로 실행된다.
+			alert("event 2");
+		});
+	</script>
+</body>
+```
+
+## 이벤트 리스너
+
+```
+<style type="text/css">
+#box {
+	width: 100px;
+	height: 100px;
+	border: 3px solid black;
+}
+
+#box.hover { // id가 box 이면서 class가 hover인것
+	background: orange;
+	color: white;
+}
+</style>
+</head>
+<body>
+	<button id="box">
+		<p>마우스를 올려주세요</p>
+	</button>
+	<script>
+		var box = document.getElementById("box");
+		box.addEventListener("mouseover", function() {
+			box.setAttribute("class", "hover");   // class="hover";
+		});
+		box.addEventListener("mouseout", function() {
+			box.removeAttribute("class");
+		});
+	</script>
+</body>
+```
+
+
