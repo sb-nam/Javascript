@@ -1,5 +1,14 @@
 # JSP
 
+## 이클립스에서 jsp
+```
+Help - Install New Software 선택
+Work with에 http://oss.opensagres.fr/tern.repository/1.2.0/ url 넣기
+Tern-Embed Node.js, Tern IDE, Tern Tooling 3개 박스 체크
+Install
+이클립스 재시작 후 프로젝트 오른쪽 클릭, Configure-Convert to Tern Project 선택
+JavaScript-Tern-Modules 에서 Browser, CKEditor, jQuery 체크
+```
 ## 데이터 타입
 ```
 var 변수명; 또는 var 변수명 = 값;
