@@ -1,6 +1,6 @@
-# JSP
+# javascript
 
-## 이클립스에서 jsp
+## 이클립스에서 javascript
 ```
 Help - Install New Software 선택
 Work with에 http://oss.opensagres.fr/tern.repository/1.2.0/ url 넣기
